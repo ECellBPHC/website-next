@@ -20,11 +20,14 @@
 .card {
   width: 35vw;
   height: 380px;
-  border: 1px solid grey;
+  border: 1px solid purple;
+  border-left: 1px solid purple !important;
+  border-right: 1px solid purple !important;
   border-radius: 15px;
   margin: 30px;
   padding: 20px;
   transition: 0.15s;
+  border-inline-color: pink;
 }
 .info {
   color: grey;
@@ -62,7 +65,7 @@
   font-weight: 700;
   align-items: center;
   text-decoration: underline;
-  text-decoration-color: rgb(8, 126, 223);
+  text-decoration-color: purple;
   text-underline-offset: 0.3em;
   text-align: center;
   margin-top: 100px;

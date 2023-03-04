@@ -47,8 +47,11 @@
     backdrop-filter: blur( 13.5px );
     -webkit-backdrop-filter: blur( 13.5px ); */
   border-radius: 10px;
+  /* background-color: purple; */
+  background: transparent;
+  background: radial-gradient(circle at 52.1% -29.6%, rgb(144, 17, 105) 0%, rgb(51, 0, 131) 100.2%);
   /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-  box-shadow: -2px -2px 6px rgba(0, 0, 0, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.6);
+  /* box-shadow: -2px -2px 6px rgba(0, 0, 0, 0.6), 2px 2px 6px rgba(0, 0, 0, 0.6); */
 }
 .face1,
 .face2 {
