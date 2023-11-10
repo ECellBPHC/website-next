@@ -7,7 +7,7 @@ import Head from 'next/head'
 import { SessionProvider } from 'next-auth/react'
 import Script from 'next/script'
 
-function MyApp({ Component, pageProps: {...pageProps } }) {
+function MyApp({ Component, pageProps: { ...pageProps } }) {
   const [nav, setNav] = useState(true)
   const [foot, setFoot] = useState(false)
   const [render, setrender] = useState('hrlo')
@@ -59,12 +59,12 @@ function MyApp({ Component, pageProps: {...pageProps } }) {
         setNav(false)
         setFoot(true)
         console.log(nav)
-            setStatus(localStorage.getItem('status'))
-            setSession({
-              _id: localStorage.getItem('userid'),
-              token: localStorage.getItem('token')
-            })
-            setEmail(localStorage.getItem('email'))
+        setStatus(localStorage.getItem('status'))
+        setSession({
+          _id: localStorage.getItem('userid'),
+          token: localStorage.getItem('token')
+        })
+        setEmail(localStorage.getItem('email'))
       } else if (params == '/id/paynow') {
         setNav(false)
         setFoot(true)
@@ -77,17 +77,20 @@ function MyApp({ Component, pageProps: {...pageProps } }) {
   return (
     <>
       <Head>
-        <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
         <title>ECell | Launchpad </title>
       </Head>
       {/* <SessionProvider session={session}> */}
-        <div className={nav ? 'oldnav' : 'Navbar'}>
-        {nav ? <Navbar hook={setrender} /> : <Navbar1 email={ email} session={session} status={status} />}
-        </div>
-        <div className={nav ? 'nav0' : 'null'}>
-          <Component {...pageProps} hooks={setrender} />
-        </div>
-        {foot ? null : <Footer />}
+      <div className={nav ? 'oldnav' : 'Navbar'}>
+        {nav ? (
+          <Navbar hook={setrender} />
+        ) : (
+          <Navbar1 email={email} session={session} status={status} />
+        )}
+      </div>
+      <div className={nav ? 'nav0' : 'null'}>
+        <Component {...pageProps} hooks={setrender} />
+      </div>
+      {foot ? null : <Footer />}
       {/* </SessionProvider> */}
     </>
   )
